@@ -1,0 +1,30 @@
+<html>
+	<head>
+<script
+  src="https://code.jquery.com/jquery-1.12.4.js"
+  integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+  crossorigin="anonymous"></script>
+<script src="js/main.js">
+</script>
+	</head>
+	<body>
+		<h1>ADD USERNAME</h1>
+		
+		<form action="/user/add" method="post">
+			<label>USERNAME:</label>
+			<input type="text" name="username">
+			</br>
+			<label>PASSWORD:</label>
+			<input type="password" name="password">
+			</br>
+			<input type="submit" value="submit">
+		</form>
+		<ul> 
+		<% users.forEach(function(user){ %>
+			<li><%= user.username %> - <a href="#" class="deleteUser" data-id="<%= user._id %>">DELETE</a></li>
+		<% }) %>
+		</ul>
+
+
+	</body>
+</html>

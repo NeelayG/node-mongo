@@ -1,0 +1,28 @@
+<html>
+	<head>
+<script
+  src="https://code.jquery.com/jquery-1.12.4.js"
+  integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+  crossorigin="anonymous"></script>
+<script src="js/main.js">
+</script>
+	<body>
+		<h1>WELCOME TO THE SITE</h1>	
+		<form action="/login" method="post">
+			<input type="submit" value="login">
+		</form>
+		<form action="/register" method="post">
+			<input type="submit" value="register">
+		</form>
+		<form action="/adminlogin" method="post">
+			<input type="submit" value="Admin">
+		</form>
+		<ul> 
+		<% users.forEach(function(user){ %>
+			<li><%= user.username %><a href="#" class="deleteUser" data-id="<%= user._id %>">DELETE</a></li>
+		<% }) %>
+		</ul>
+	</body>
+
+</head>
+</html>
